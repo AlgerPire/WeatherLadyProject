@@ -12,4 +12,5 @@ public class SpecifiedInformation {
     private int wind_speed;
     private String wind_dir;
     private int temperature;
+    private String observation_time;
 }

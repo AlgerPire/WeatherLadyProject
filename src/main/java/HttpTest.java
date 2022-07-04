@@ -43,11 +43,13 @@ public class HttpTest {
             Gson gson = new Gson();
             GetWeatherInformation getWeatherInformation = gson.fromJson(sResponse, GetWeatherInformation.class);
 
-            System.out.println(" City is: "+city+" \n Temperature: "+getWeatherInformation.getCurrent().getTemperature()+" °C "+
-                    "\n Wind Direction: "+getWeatherInformation.getCurrent().getWind_dir()
-                    +"\n Wind Speed: "+getWeatherInformation.getCurrent().getWind_speed()+" km/h");
+            System.out.println(" City is: " + city + " \n Temperature: " + getWeatherInformation.getCurrent().getTemperature() + " °C " +
+                    "\n Wind Direction: " + getWeatherInformation.getCurrent().getWind_dir()
+                    + "\n Wind Speed: " + getWeatherInformation.getCurrent().getWind_speed() + " km/h"
+                    + " \n Time of Measurement " + getWeatherInformation.getCurrent().getObservation_time());
+
             // Return class model
-            return  getWeatherInformation.getCurrent();
+            return getWeatherInformation.getCurrent();
         } catch (Exception e) {
             System.out.println("* Something went wrong while retrieving weather data. *");
         }
